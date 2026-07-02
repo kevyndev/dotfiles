@@ -1,0 +1,26 @@
+{
+  "position": "bottom",
+  "width": "auto",
+  "spacing": 3,
+  "margin": 0,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["pulseaudio", "tray", "clock"],
+  "clock": {
+    "format": "<span foreground='#f5c2e7'>   </span>{:%A %e/%m/%Y   %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+   "tray": {
+	"icon-size": 24,
+	"show-passive-items": true,
+	"spacing": 10
+  },
+  "pulseaudio": {
+      "format": "{icon}  {volume}%",
+      "format-muted": "",
+      "format-icons": {
+          "default": ["", "", " "]
+      },
+      "on-click": "pavucontrol"
+  }
+}
