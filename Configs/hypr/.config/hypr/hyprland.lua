@@ -8,7 +8,6 @@
 -- require("~/.config/hypr/myColors.lua")
 
 require("~/.config/hypr/config/monitors.lua")       -- Configures monitor layout and resolution
-require("~/.config/hypr/config/programs.lua")       -- General variables affecting the system
 require("~/.config/hypr/config/autostart.lua")      -- Defines application to launch on startup
 require("~/.config/hypr/config/environment.lua")    -- Sets environment variables ans system behavior
 require("~/.config/hypr/config/animations.lua")     -- Control window animations
@@ -21,7 +20,7 @@ require("~/.config/hypr/config/layout.lua")         --
 require("~/.config/hypr/config/misc.lua")           --
 
 hl.config({
-    locale = pt_BR.utf-8
+    locale = pt_BR
 })
 
 -- More info: https://wiki.hypr.land/

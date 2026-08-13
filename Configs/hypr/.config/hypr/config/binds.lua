@@ -1,4 +1,17 @@
 ---------------------
+---- MY PROGRAMS ----
+---------------------
+
+-- Set programs that you use
+
+
+local terminal = "kitty"
+local fileManager = "dolphin"
+local menu = "rofi -show drun"
+-- local menu = "rofi -show combi -combi-modes drun,calc -modes combi,calc"
+local textedit = "code"
+
+---------------------
 ---- KEYBINDINGS ----
 ---------------------
 
@@ -38,10 +51,10 @@ hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "u" }))
 hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "r" }))
 
 -- Move window with mainMod + arrow keys
-hl.bind(mainMod .. " SHIFT + h", hl.dsp.focus({ window = "l" }))
-hl.bind(mainMod .. " SHIFT + j", hl.dsp.focus({ window = "d" }))
-hl.bind(mainMod .. " SHIFT + k", hl.dsp.focus({ window = "u" }))
-hl.bind(mainMod .. " SHIFT + l", hl.dsp.focus({ window = "r" }))
+hl.bind(mainMod .. " + SHIFT + h", hl.dsp.focus({ window = "l" }))
+hl.bind(mainMod .. " + SHIFT + j", hl.dsp.focus({ window = "d" }))
+hl.bind(mainMod .. " + SHIFT + k", hl.dsp.focus({ window = "u" }))
+hl.bind(mainMod .. " + SHIFT + l", hl.dsp.focus({ window = "r" }))
 
 -- Switch workspaces with mainMod + [0-9]
 
@@ -54,24 +67,24 @@ hl.bind(mainMod .. " + 6", hl.dsp.focus({ workspace = "6" }))
 hl.bind(mainMod .. " + 7", hl.dsp.focus({ workspace = "7" }))
 hl.bind(mainMod .. " + 8", hl.dsp.focus({ workspace = "8" }))
 hl.bind(mainMod .. " + 9", hl.dsp.focus({ workspace = "9" }))
-hl.bind(mainMod .. " + 10", hl.dsp.focus({ workspace = "10" }))
+--hl.bind(mainMod .. " + 10", hl.dsp.focus({ workspace = "10" }))
 
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
-bind = $mainMod SHIFT, 1, movetoworkspace, 1
-hl.bind(mainMod .. " SHIFT + 1", hl.dsp.window.move({ workspace = "1", follow = "0", window = "activewindow" }))
-hl.bind(mainMod .. " SHIFT + 2", hl.dsp.window.move({ workspace = "2", follow = "0", window = "activewindow" }))
-hl.bind(mainMod .. " SHIFT + 3", hl.dsp.window.move({ workspace = "3", follow = "0", window = "activewindow" }))
-hl.bind(mainMod .. " SHIFT + 4", hl.dsp.window.move({ workspace = "4", follow = "0", window = "activewindow" }))
-hl.bind(mainMod .. " SHIFT + 5", hl.dsp.window.move({ workspace = "5", follow = "0", window = "activewindow" }))
-hl.bind(mainMod .. " SHIFT + 6", hl.dsp.window.move({ workspace = "6", follow = "0", window = "activewindow" }))
-hl.bind(mainMod .. " SHIFT + 7", hl.dsp.window.move({ workspace = "7", follow = "0", window = "activewindow" }))
-hl.bind(mainMod .. " SHIFT + 8", hl.dsp.window.move({ workspace = "8", follow = "0", window = "activewindow" }))
-hl.bind(mainMod .. " SHIFT + 9", hl.dsp.window.move({ workspace = "9", follow = "0", window = "activewindow" }))
-hl.bind(mainMod .. " SHIFT + 10", hl.dsp.window.move({ workspace = "10", follow = "0", window = "activewindow" }))
+--bind = $mainMod SHIFT, 1, movetoworkspace, 1
+hl.bind(mainMod .. " + SHIFT + 1", hl.dsp.window.move({ workspace = "1", follow = "0", window = "activewindow" }))
+hl.bind(mainMod .. " + SHIFT + 2", hl.dsp.window.move({ workspace = "2", follow = "0", window = "activewindow" }))
+hl.bind(mainMod .. " + SHIFT + 3", hl.dsp.window.move({ workspace = "3", follow = "0", window = "activewindow" }))
+hl.bind(mainMod .. " + SHIFT + 4", hl.dsp.window.move({ workspace = "4", follow = "0", window = "activewindow" }))
+hl.bind(mainMod .. " + SHIFT + 5", hl.dsp.window.move({ workspace = "5", follow = "0", window = "activewindow" }))
+hl.bind(mainMod .. " + SHIFT + 6", hl.dsp.window.move({ workspace = "6", follow = "0", window = "activewindow" }))
+hl.bind(mainMod .. " + SHIFT + 7", hl.dsp.window.move({ workspace = "7", follow = "0", window = "activewindow" }))
+hl.bind(mainMod .. " + SHIFT + 8", hl.dsp.window.move({ workspace = "8", follow = "0", window = "activewindow" }))
+hl.bind(mainMod .. " + SHIFT + 9", hl.dsp.window.move({ workspace = "9", follow = "0", window = "activewindow" }))
+--hl.bind(mainMod .. " + SHIFT + 10", hl.dsp.window.move({ workspace = "10", follow = "0", window = "activewindow" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + MOUSE_DOWN", hl.dsp.window.move({ workspace = "e+1", follow = "0", window = "activewindow" }))
-hl.bind(mainMod .. " + MOUSE_UP", hl.dsp.window.move({ workspace = "e-1", follow = "0", window = "activewindow" }))
+hl.bind(mainMod .. " + mouse_down", hl.dsp.window.move({ workspace = "e+1", follow = "0", window = "activewindow" }))
+hl.bind(mainMod .. " + mouse_up", hl.dsp.window.move({ workspace = "e-1", follow = "0", window = "activewindow" }))
 
 --[[ TO DO
 
