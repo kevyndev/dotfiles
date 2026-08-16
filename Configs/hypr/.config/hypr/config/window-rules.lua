@@ -52,22 +52,22 @@ hl.window_rule({
 hl.window_rule({
     name = "discord",
     match = {
-        class = "discord"
+        class = "discord",
     },
-    workspace = 8 silent
+    workspace = "8 silent"
 })
 
 --windowrule = match:class ^(Spotify)$, workspace 9 silent
 hl.window_rule({
     name = "Spotify",
     match = {
-        class = "Spotify"
+        class = "Spotify",
     },
-    workspace = 9 silent
+    workspace = "9 silent"
 })
 
 hl.window_rule({
-    name = "floating windows",
+    name = "pavucontrol float",
     match = {
         class = "org.pulseaudio.pavucontrol"
     },
@@ -78,7 +78,7 @@ hl.window_rule({
 hl.window_rule({
     name = "calculator-floating",
     match = {
-        class = "org.kde.kalk"
+        class = "chrome"
     },
     float = 1
 })

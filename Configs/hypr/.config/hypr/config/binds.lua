@@ -4,7 +4,6 @@
 
 -- Set programs that you use
 
-
 local terminal = "kitty"
 local fileManager = "dolphin"
 local menu = "rofi -show drun"
@@ -29,16 +28,10 @@ hl.bind(mainMod .. " + CTRL + l", hl.dsp.exec_cmd("hyprlock"))
 
 -- Functions
 hl.bind(mainMod .. " + C", hl.dsp.window.close({ window = "activewindow" }))
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle", layout_aware = "true", window = "activewindow" }))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle", layout_aware = "true", window = "activewindow" }))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle", window = "activewindow" }))
 
---[[ TO DO
-
---bind = $mainMod, G, exec, hyprctl dispatch togglefloating && hyprctl dispatch resizeactive exact 50% 60% && hyprctl dispatch centerwindow
-
-bind = $mainMod, N, layoutmsg, togglesplit # dwindle
-
-]]
+hl.bind(mainMod .. " + N", hl.dsp.layout("togglesplit"))
 
 -- Screenshots
 hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m window"))
@@ -51,10 +44,10 @@ hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "u" }))
 hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "r" }))
 
 -- Move window with mainMod + arrow keys
-hl.bind(mainMod .. " + SHIFT + h", hl.dsp.focus({ window = "l" }))
-hl.bind(mainMod .. " + SHIFT + j", hl.dsp.focus({ window = "d" }))
-hl.bind(mainMod .. " + SHIFT + k", hl.dsp.focus({ window = "u" }))
-hl.bind(mainMod .. " + SHIFT + l", hl.dsp.focus({ window = "r" }))
+hl.bind(mainMod .. " + SHIFT + h", hl.dsp.window.move({ direction = "l", group_aware = "true", window = "activewindow" }))
+hl.bind(mainMod .. " + SHIFT + j", hl.dsp.window.move({ direction = "d", group_aware = "true", window = "activewindow" }))
+hl.bind(mainMod .. " + SHIFT + k", hl.dsp.window.move({ direction = "u", group_aware = "true", window = "activewindow" }))
+hl.bind(mainMod .. " + SHIFT + l", hl.dsp.window.move({ direction = "r", group_aware = "true", window = "activewindow" }))
 
 -- Switch workspaces with mainMod + [0-9]
 
@@ -67,10 +60,8 @@ hl.bind(mainMod .. " + 6", hl.dsp.focus({ workspace = "6" }))
 hl.bind(mainMod .. " + 7", hl.dsp.focus({ workspace = "7" }))
 hl.bind(mainMod .. " + 8", hl.dsp.focus({ workspace = "8" }))
 hl.bind(mainMod .. " + 9", hl.dsp.focus({ workspace = "9" }))
---hl.bind(mainMod .. " + 10", hl.dsp.focus({ workspace = "10" }))
 
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
---bind = $mainMod SHIFT, 1, movetoworkspace, 1
 hl.bind(mainMod .. " + SHIFT + 1", hl.dsp.window.move({ workspace = "1", follow = "0", window = "activewindow" }))
 hl.bind(mainMod .. " + SHIFT + 2", hl.dsp.window.move({ workspace = "2", follow = "0", window = "activewindow" }))
 hl.bind(mainMod .. " + SHIFT + 3", hl.dsp.window.move({ workspace = "3", follow = "0", window = "activewindow" }))
@@ -80,30 +71,19 @@ hl.bind(mainMod .. " + SHIFT + 6", hl.dsp.window.move({ workspace = "6", follow 
 hl.bind(mainMod .. " + SHIFT + 7", hl.dsp.window.move({ workspace = "7", follow = "0", window = "activewindow" }))
 hl.bind(mainMod .. " + SHIFT + 8", hl.dsp.window.move({ workspace = "8", follow = "0", window = "activewindow" }))
 hl.bind(mainMod .. " + SHIFT + 9", hl.dsp.window.move({ workspace = "9", follow = "0", window = "activewindow" }))
---hl.bind(mainMod .. " + SHIFT + 10", hl.dsp.window.move({ workspace = "10", follow = "0", window = "activewindow" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.window.move({ workspace = "e+1", follow = "0", window = "activewindow" }))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.window.move({ workspace = "e-1", follow = "0", window = "activewindow" }))
-
---[[ TO DO
+hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1", follow = "0", window = "activewindow" }))
+hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1", follow = "0", window = "activewindow" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
-bindm = $mainMod, mouse:272, movewindow
-bindm = $mainMod, mouse:273, resizewindow
+hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
--- Laptop multimedia keys for volume and LCD brightness
-bindel = ,XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
-bindel = ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-bindel = ,XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-bindel = ,XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
-bindel = ,XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+
-bindel = ,XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-
-
--- Requires playerctl
-bindl = , XF86AudioNext, exec, playerctl next
-bindl = , XF86AudioPause, exec, playerctl play-pause
-bindl = , XF86AudioPlay, exec, playerctl play-pause
-bindl = , XF86AudioPrev, exec, playerctl previous
-
-]]
+-- Multimedia keys for volume and play/pause
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"), { repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%-"), { repeating = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"))
+hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"))
+hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"))
