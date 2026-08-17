@@ -1,0 +1,199 @@
+[audio]
+enable_sounds = true
+sound_volume = 0.99999997764825821
+
+[bar]
+order = [ "default" ]
+
+    [bar.default]
+    background_opacity = 0.19999999552965164
+    border_width = 2.0
+    capsule = true
+    capsule_padding = 4.0
+    capsule_thickness = 0.85999998450279236
+    end = [
+        "tray",
+        "notifications",
+        "clipboard",
+        "network",
+        "bluetooth",
+        "volume",
+        "brightness",
+        "battery",
+        "control-center",
+        "session"
+    ]
+    margin_ends = 25
+    start = [ "launcher", "wallpaper", "workspaces", "media" ]
+
+[desktop_widgets]
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = false
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = false
+    timeout = 10.0
+
+[location]
+address = "Guarulhos"
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@HDMI-A-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "DP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 640.0
+    cy = 618.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[shell]
+screen_time_enabled = true
+
+    [shell.panel]
+    list_item_background = true
+
+    [shell.screenshot]
+    directory = "/home/kevyn/Images/Screenshots"
+
+    [[shell.session.actions]]
+    action = "lock"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "1"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "logout"
+    countdown_seconds = 0.0
+    enabled = false
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "lock_and_suspend"
+    countdown_seconds = 0.0
+    enabled = false
+    shortcut = "3"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "4"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "5"
+    variant = "destructive"
+
+[system.monitor]
+net_rx_critical_threshold = 25.0
+net_tx_critical_threshold = 20.0
+
+[theme]
+community_palette = "Oxocarbon"
+source = "builtin"
+wallpaper_scheme = "m3-content"
+
+[wallpaper]
+transition_on_startup = true
+
+    [wallpaper.default]
+    path = "/usr/share/noctalia/assets/noctalia-wallpaper.png"
+
+    [wallpaper.last]
+    path = "/usr/share/noctalia/assets/noctalia-wallpaper.png"
+
+[widget.clock]
+format = "{:%H:%M:%S} - {:%d/%m/%Y}"
+
+[widget.media]
+artist_first = true
+font_weight = 300
+hide_album_art = true
+max_length = 300
+
+    [widget.media.actions]
+    back = "none"
+    forward = "none"
+    scroll_down = "none"
+    scroll_up = "none"
+
+[widget.tray]
+scale = 1.3

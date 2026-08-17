@@ -14,7 +14,9 @@
 -- end)
 
 hl.on("hyprland.start", function ()
-    hl.exec_cmd("waybar & swaync & systemctl --user start hyprpolkitagent")
+    --hl.exec_cmd("waybar & swaync & systemctl --user start hyprpolkitagent")
+    hl.exec_cmd("noctalia")
+    hl.exec_cmd("systemctl --user start hyprpolkitagent")
     hl.exec_cmd("kbuildsycoca6")
 
     hl.timer(function()
