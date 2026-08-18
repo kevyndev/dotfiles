@@ -11,20 +11,13 @@ order = [ "default" ]
     capsule = true
     capsule_padding = 4.0
     capsule_thickness = 0.85999998450279236
-    end = [
-        "tray",
-        "notifications",
-        "clipboard",
-        "network",
-        "bluetooth",
-        "volume",
-        "brightness",
-        "battery",
-        "control-center",
-        "session"
-    ]
+    center = [ "control-center", "clock" ]
+    end = [ "tray", "notifications", "clipboard", "network", "volume", "session" ]
     margin_ends = 25
     start = [ "launcher", "wallpaper", "workspaces", "media" ]
+
+[control_center.calendar]
+show_events_card = false
 
 [desktop_widgets]
 schema_version = 2
@@ -167,7 +160,9 @@ net_rx_critical_threshold = 25.0
 net_tx_critical_threshold = 20.0
 
 [theme]
+builtin = "Noctalia"
 community_palette = "Oxocarbon"
+mode = "dark"
 source = "builtin"
 wallpaper_scheme = "m3-content"
 
@@ -194,6 +189,9 @@ max_length = 300
     forward = "none"
     scroll_down = "none"
     scroll_up = "none"
+
+[widget.network]
+show_label = false
 
 [widget.tray]
 scale = 1.3
