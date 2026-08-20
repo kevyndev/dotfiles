@@ -78,7 +78,13 @@ hl.window_rule({
 hl.window_rule({
     name = "calculator-floating",
     match = {
-        class = "chrome"
+        class = "org.kde.kalk"
     },
     float = 1
+})
+
+hl.window_rule({
+    match = { class = "dev.noctalia.Noctalia" },
+    float = true,
+    size = { 1080, 920 },
 })
