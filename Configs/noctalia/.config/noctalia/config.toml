@@ -16,8 +16,12 @@ order = [ "default" ]
     margin_ends = 25
     start = [ "launcher", "wallpaper", "workspaces", "media" ]
 
-[control_center.calendar]
-show_events_card = false
+[control_center]
+hidden_tabs = [ "monitor", "power", "network", "bluetooth" ]
+shortcuts = []
+
+    [control_center.calendar]
+    show_events_card = false
 
 [desktop_widgets]
 schema_version = 2
@@ -52,7 +56,7 @@ behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
 address = "Guarulhos"
 
 [lockscreen_widgets]
-enabled = false
+enabled = true
 schema_version = 2
 widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@HDMI-A-1" ]
 
@@ -111,6 +115,9 @@ widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@HDMI-A-1" ]
         show_unlock_hint = true
         show_weather = true
 
+[osd.kinds]
+media = false
+
 [shell]
 screen_time_enabled = true
 
@@ -162,7 +169,7 @@ net_tx_critical_threshold = 20.0
 [theme]
 builtin = "Noctalia"
 community_palette = "Oxocarbon"
-mode = "dark"
+mode = "auto"
 source = "builtin"
 wallpaper_scheme = "m3-content"
 
@@ -176,7 +183,8 @@ transition_on_startup = true
     path = "/usr/share/noctalia/assets/noctalia-wallpaper.png"
 
 [widget.clock]
-format = "{:%H:%M:%S} - {:%d/%m/%Y}"
+format = "{:%H:%M:%S}  -  {:%d/%m/%Y}"
+scale = 1.2000000000000002
 
 [widget.media]
 artist_first = true
