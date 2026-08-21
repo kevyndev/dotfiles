@@ -169,7 +169,7 @@ net_tx_critical_threshold = 20.0
 [theme]
 builtin = "Noctalia"
 community_palette = "Oxocarbon"
-mode = "auto"
+mode = "dark"
 source = "builtin"
 wallpaper_scheme = "m3-content"
 

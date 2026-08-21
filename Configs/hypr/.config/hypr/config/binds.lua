@@ -33,8 +33,8 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle", window = "ac
 hl.bind(mainMod .. " + N", hl.dsp.layout("togglesplit"))
 
 -- Screenshots
-hl.bind("PRINT", hl.dsp.exec_cmd(ipc .. "screenshot-fullscreen pick")) --screenshot-fullscreen [pick|monitor|all]
-hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd(ipc .. "screenshot-region"))
+hl.bind("PRINT", hl.dsp.exec_cmd(ipc .. " screenshot-fullscreen pick")) --screenshot-fullscreen [pick|monitor|all]
+hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd(ipc .. " screenshot-region"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "l" }))
